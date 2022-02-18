@@ -27,16 +27,44 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <CategoryList :list="contactList"/>
+
   </div>
+  
 </template>
 
 <script>
+import CategoryList from './CategoryList.vue'
+
 export default {
   name: 'HelloWorld',
+  components: {
+    CategoryList,
+    },
   props: {
     msg: String
-  }
-}
+  },
+  data() {
+    return {
+     
+       contactList: [
+        {
+          id: 1,
+          category: "femme",
+          },
+          {
+          id: 2,
+          category: "homme",
+          },
+          {
+          id: 3,
+          category: "enfant",
+          },
+          ],
+}},
+
+  
+    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
